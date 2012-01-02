@@ -4,7 +4,6 @@ from enthought.mayavi import mlab
 
 
 def efield(name, sources, grid):
-#~ def efield():
     X, Y, Z = grid
     Ex, Ey, Ez = (zeros_like(X), zeros_like(Y), zeros_like(Z))
     for source in sources:
@@ -20,7 +19,6 @@ def efield(name, sources, grid):
         Ex += q * rminus3half * Xs
         Ey += q * rminus3half * Ys
         Ez += q * rminus3half * Zs
-        
     #  Run isnan on the data after adding all of the field contributions
     Xs[isnan(Xs)] = 0
     Ys[isnan(Ys)] = 0
