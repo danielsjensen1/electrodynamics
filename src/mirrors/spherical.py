@@ -11,11 +11,11 @@ class MplCanvasFrame(wx.Frame):
         wx.Frame.__init__(self, None, wx.ID_ANY, title="Spherical Mirrors",
                           size=(640, 480))
         #  Usual Matplotlib functions
-        self.fig=Figure(figsize=(6, 4), dpi=100)
-        self.ax=self.fig.add_subplot(111)
+        self.fig = Figure(figsize=(6, 4), dpi=100)
+        self.ax = self.fig.add_subplot(111)
         #  Plot the mirror and optical axes
         self.mirror()
-        self.ax.plot(xlims, (0e0, 0e0), color='grey')
+        self.ax.axhline(y=0, xmin=0, xmax=1, color='grey')
         self.ax.set_xlim(xlims)
         #  Initialize the FigureCanvas, mapping the figure to the Wx backend
         self.canvas=FigureCanvas(self, wx.ID_ANY, self.fig)
